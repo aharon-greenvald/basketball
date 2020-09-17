@@ -1,0 +1,15 @@
+.page{
+    height: 100vh;
+
+    background-image:url("../../../assets/basketball.jpg");
+}
+
+.wrap{
+    justify-content: center;
+
+    display: flex;
+}
+.card-img-top{
+    height: 245px;
+    width: 345px
+}
