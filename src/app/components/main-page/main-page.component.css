@@ -1,11 +1,19 @@
+/* 
+::-webkit-scrollbar{
+    display: none;
+} */
 .page{
     height: 100vh;
+    overflow: auto;
+    
+
 
     background-image:url("../../../assets/basketball.jpg");
 }
 
 .wrap{
     justify-content: center;
+    display: inline-block;
 
     display: flex;
 }
