@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ListService } from 'src/shared/services/list.service';
+import { TeamService } from 'src/shared/services/team.service';
 
 
 @Component({
@@ -11,9 +12,11 @@ export class MainPageComponent implements OnInit {
   l ="../../../assets/aron.jpg"
 
 a =''
-  constructor(private srv:ListService) { }
+  constructor(public listService:ListService,public teamService:TeamService ) { }
 
   ngOnInit(): void {
+    console.log(this.listService.mylist.length);
+    
   }
   addCounter(player){
     player.made++
@@ -24,6 +27,19 @@ a =''
     player.missed++
     console.log(player);
     
+  }
+  addPlayer(obj){
+    if(this.teamService.team1.length<3){
+      this.teamService.newTeam1(obj)
+      console.log(obj);
+    }else if(this.teamService.team2.length<3){
+      this.teamService.newTeam2(obj)
+      console.log(obj);
+    }
+
+   
+    
+
   }
 
 }

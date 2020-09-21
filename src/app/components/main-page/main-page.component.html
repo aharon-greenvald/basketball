@@ -1,8 +1,8 @@
 <div class="page">
-        <p>main-page works!</p>
         <h1>basketball</h1>
-        <div class="wrap">
-                <div style="margin-left:267px;" *ngFor="let player of srv.list">
+                
+                <div class="wrap"  *ngFor="let player of listService.mylist">
+                        <button (click)="addPlayer(player)">Choose me </button>
             
                         <div class="card" style="width: 18rem;">
                                 <img class="card-img-top" src="../../../assets/aron.jpg" alt="Card image cap">
@@ -14,15 +14,20 @@
 
 
                                   </div>
-                                      <a href="#" class="btn btn-primary" (click)="addCounter(player)">Make shot</a>
-                                      <a href="#" class="btn btn-danger" (click)="missesCounter(player)">Missed shot</a>
+                                      <button class="btn btn-primary" (click)="addCounter(player)">Make shot</button>
+                                      <button class="btn btn-danger" (click)="missesCounter(player)">Missed shot</button>
                                     </div>
                                   </div>
                                 
-                        </div>
+        
         
         </div>
+
+        <div >
+                <button routerLink="team" style="width: 1235px;height: 37px;" >Create Team</button>
+        </div>
         
+       
         
         
 

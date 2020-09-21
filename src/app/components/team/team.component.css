@@ -5,21 +5,20 @@
 .page{
     height: 100vh;
     overflow: auto;
+    flex-direction: row;
     text-align: center;
-    
 
 
-    background-image:url("../../../assets/basketball.jpg");
 }
 
 .wrap{
-    justify-content: center;
-    display: inline-block;
-    /* display: flex; */
-    
+
+    display: flex;
 }
-.card{}
 .card-img-top{
     height: 245px;
     width: 345px
 }
+/* .team2{
+    background-color: brown;
+} */
