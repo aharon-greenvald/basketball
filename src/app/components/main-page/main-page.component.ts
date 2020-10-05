@@ -9,13 +9,15 @@ import { TeamService } from 'src/shared/services/team.service';
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent implements OnInit {
-  l ="../../../assets/aron.jpg"
-
-a =''
+ data:any;
   constructor(public listService:ListService,public teamService:TeamService ) { }
 
-  ngOnInit(): void {
-    console.log(this.listService.mylist.length);
+  ngOnInit(){
+    this.listService.getConfig().subscribe((result=>{
+      this.data = result;
+
+    }))
+    
     
   }
   addCounter(player){
