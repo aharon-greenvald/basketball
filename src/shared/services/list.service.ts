@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ListService {
 
-  url = 'http://localhost:5000/api/users/'
+  url = 'assets/list.json'
   
 
   constructor(private http: HttpClient) { }
