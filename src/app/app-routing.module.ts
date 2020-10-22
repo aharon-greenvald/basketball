@@ -8,7 +8,7 @@ import { AuthGuard } from './gurds/auth.guard';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
-  {path:'main',component:MainPageComponent},
+  {path:'main',component:MainPageComponent ,canActivate:[AuthGuard]},
   {path:'main/team',component:TeamComponent}
 ];
 

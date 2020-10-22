@@ -14,6 +14,7 @@ export class MainPageComponent implements OnInit {
   constructor(public teamService:TeamService,public authentication:AuthenticationService ) { }
   userName 
   newUser
+  iskliked=true;
   ngOnInit(){
     // this.listService.getConfig().subscribe((result=>{
     //   this.data = result;
@@ -39,6 +40,7 @@ export class MainPageComponent implements OnInit {
   }
   
   addPlayer(player){
+   
     
    
 
