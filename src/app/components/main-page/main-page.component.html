@@ -1,35 +1,49 @@
-
 <div class="page">
-        <h1>basketball</h1>
-                
-                <div class="wrap"  *ngFor="let player of data">
-                        <button (click)="addPlayer(player)">Choose me </button>
-            
-                        <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="{{player.img}}" >
-                                  <div  class="card-body">
-                                  <h3  class="card-title">{{player.name}}</h3>
-                                  <div style="display: flex;">
-                                        <!-- <span><h2 class="card-text">{{player.made}}</h2></span> -->
-                                        <span><h2 class="card-text">{{player.shirtNumber}}</h2></span>
+        <div class="new">
+                <h1 *ngIf="!authentication.oneOfus">welcome {{teamService.newUser }} </h1>
+                <h2 *ngIf="!authentication.oneOfus">Sorry, but we are already 6, don't worry we took
+                        your details <br> when there will be space, we will contact</h2>
+
+        </div>
+         <h1 *ngIf="authentication.oneOfus">hi {{authentication.userName }} lat's play </h1>
+
+        <div class="wrap" *ngFor="let player of data">
+                <button (click)="addPlayer(player)">Choose me </button>
+                <div>
+                       {{player.name}} 
+                </div>
+
+                <div *ngIf="player.id<=6"  >
+                        <img class="card-img-top" src="{{player.img}}" >
+
+                        
+                </div>
 
 
-                                  </div>
-                                      <button class="btn btn-primary" (click)="addCounter(player)">Make shot</button>
-                                      <button class="btn btn-danger" (click)="missesCounter(player)">Missed shot</button>
-                                    </div>
-                                  </div>
-                                
-        
-        
+
+
+        </div> 
+
+        <div>
+                <button routerLink="team" routerLinkActive="router-link-active" >Create Team</button>
+        </div> 
+        <h1 class="vs">vsddddddddddd</h1>
+ <div class="balls" >
+        <div class="ball1" >
+    <img *ngFor="let player of teamService.team1" class="ball" src="{{player.imgball}}" alt="">
+    
         </div>
 
-        <div >
-                <button routerLink="team" style="width: 1235px;height: 37px;" >Create Team</button>
-        </div>
-        
-       
-        
-        
+        <div class="ball2">
+ <img  *ngFor="let player of teamService.team2" class="ball" src="{{player.imgball}}" alt="">
+
+    
+        </div> 
+
+</div>
+
+
+
+
 
 </div>

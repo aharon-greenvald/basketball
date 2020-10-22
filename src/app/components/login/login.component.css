@@ -5,29 +5,47 @@
 }
 .wellcom{
   display: flex;
-  
+  text-shadow: 0 2px 20px ;
+  font-size: 82px;
+  color :black;
+
+
   justify-content: center;
   
 }
+/* h2{
+  line-height: 1.6;
+  color :black;
+
+
+} */
 .text{
+
   display: flex;
-  opacity: 0.5;
+  font-family: Arial, Helvetica, sans-serif;
 
   justify-content: center;
 color :orangered;
 }
 .oneOfus{
   display: flex;
+  margin-top: 35px;
 
   justify-content: center;
 
 }
-button{
-  margin:15px;
-
+h4{
+  color :orangered;
+}
+span{
+  
+  margin:25px;
 }
 .log{
- 
+  /* background-color: rgba(0,0,0,0); */
+
+}
+.img{
 
 }
 
@@ -68,14 +86,14 @@ button {
 
 .login{
   background-image:url("https://media.giphy.com/media/rBVM213ASKBIk/giphy.gif");
-  color: #f1f1f1;
+  color :orangered;
   /* display: inline-block; */
   margin-right:400px; 
 
 }
 .regisration{
-  background-image:url("https://media.giphy.com/media/rBVM213ASKBIk/giphy.gif");
-  color: #f1f1f1;
+  background-image:url("https://media.giphy.com/media/87gYRrev40o0wMW4cC/giphy.gif");
+  color :orangered;
   margin-left:600px; 
 
 

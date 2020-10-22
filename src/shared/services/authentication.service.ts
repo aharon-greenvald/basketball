@@ -8,8 +8,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthenticationService {
- 
-
+  oneOfus=false;
+ userName ='';
   isAuth = false;
  exisistPlayer = new Player('aron',23);
   constructor(private router:Router) { }
@@ -18,6 +18,8 @@ export class AuthenticationService {
     if(player.name==this.exisistPlayer.name&&
       player.shirtNumber==this.exisistPlayer.shirtNumber){
       this.isAuth=true;
+      this.oneOfus =true;
+      this.userName=player.name
       this.router.navigate(['main'])
       console.log("wellcom");
       return true

@@ -15,7 +15,8 @@ export class LoginComponent implements OnInit {
   oneOfus:boolean;
   newHer:boolean;
  list
-  isFormInValid = false;
+  isFormInValidLogin = false;
+  isFormInValidSignin = false;
   isExists = false;
   constructor( private authentication:AuthenticationService
               ,public teamService:TeamService,
@@ -25,7 +26,7 @@ export class LoginComponent implements OnInit {
   }
   onSubmit(signinForm:NgForm){
     if(!signinForm.valid){
-      this.isFormInValid = true;
+      this.isFormInValidLogin = true;
       this.isExists = false;
       return;
 
@@ -38,10 +39,11 @@ export class LoginComponent implements OnInit {
   private checkIfExists(signinForm:NgForm){
     let loginData = new Player(signinForm.value.name,signinForm.value.shirtNumber)
     if(!this.authentication.authenticate(loginData)){
-      this.isFormInValid = false;
+      this.isFormInValidLogin = false;
       this.isExists = true;
 
     }
+
 
   }
   checkIfOneOfUs(){
@@ -55,8 +57,13 @@ this.oneOfus = false;
 
   }
   onSubmitSign(signinForm){
-       this.teamService.addNewPlayer(signinForm.value);
-       this.authentication.isAuth=true;
+    if(signinForm.valid){
+      this.teamService.addNewPlayer(signinForm.value);
+      this.authentication.isAuth=true;
+      this.authentication.oneOfus=false;
+
+    }
+    this.isFormInValidSignin=true
 
 
     console.log(signinForm);

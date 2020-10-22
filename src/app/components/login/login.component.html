@@ -1,25 +1,35 @@
+<link href='https://fonts.googleapis.com/css?family=Paytone One' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Allan' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Staatliches' rel='stylesheet'>
+
 <div class="body">
     <!-- <button (click)="add()" >adddd</button> -->
    
    
-    <h1 class="wellcom">wellcom</h1>
+    <h1 class="wellcom" style="font-family:Staatliches;" >stats's basketball matter</h1>
    <div class="oneOfus">
-       <button class="log">
-            <h4>one of us?</h4>
-           <img (click)="checkIfOneOfUs()" src="assets/wink.png" alt="Card image cap" >
-   
-       </button>  
-       <button class="sign">
-            <h4>new here?</h4>
-           <img (click)="checkIfNew()" src="assets/embarrassed.png" alt="Card image cap">
-   
-       </button>  
+       <!-- <div class="button"> -->
+
+           <span class="log">
+               <h4>one of us?</h4>
+               <img class="img" (click)="checkIfOneOfUs()" src="assets/wink.png" alt="Card image cap" >
+               
+           </span>  
+            <span class="sign">
+                <h4>new here?</h4>
+                <img (click)="checkIfNew()" src="assets/embarrassed.png" alt="Card image cap">
+                
+            </span>
+       <!-- </div>   -->
 
    </div>
-   <div class="text">
-       <h3>
-           if u are here u probebly shared whith <br>us
-       </h3>
+   <div class="text" style="font-family:Paytone One;">
+       <h1 *ngIf="!oneOfus&&!newHer"> 
+           if u are here u probably shared  <br> with us the love and the passion <br> of the orange
+            ball we beleve that <br>monitoring your stat's 
+            game can  <br> improve your game and make u <br>a better player and better teammate
+           <br> ok enough ... <br> choose your emoji and enter
+       </h1>
 
    </div>
     <div class="login-wrapper">
@@ -41,7 +51,7 @@
                         <button style="margin: 4px" class="btn btn-lg btn-primary btn-block" type="submit">Sign
                             in</button>
 
-                        <div class="alert alert-danger" role="alert" *ngIf="isFormInValid">
+                        <div class="alert alert-danger" role="alert" *ngIf="isFormInValidLogin">
                             Please fill all fields.
                         </div>
                         <div class="alert alert-danger" role="alert" *ngIf="isExists">
@@ -57,7 +67,8 @@
 
             <div *ngIf="newHer" class="card-body">
                 <form class="form-signin" (ngSubmit)="onSubmitSign(signIn)" #signIn="ngForm">
-                    <h1 class="h3 mb-3 font-weight-normal">Register</h1>
+                    <h1 class="h3 mb-3 font-weight-normal">Bench player
+                        </h1>
 
                     <label for="inputlogin" class="sr-only">Name </label>
                     <input type="text" id="inputLogin" class="form-control" name="name" placeholder="name" ngModel
@@ -67,15 +78,27 @@
                     <input type="number" id="inputPassword" class="form-control" name="shirtNumber"
                         placeholder="shirtNumber" autocomplete="on" ngModel required>
 
+                        <input type="text" name="city" list="cityname" class="form-control"
+                         placeholder="position" name="position" ngModel required>
+                        <datalist id="cityname">
+                          <option value="PG">
+                          <option value="SG">
+                          <option value="SF">
+                          <option value="PF">
+                          <option value="C">
+                        </datalist>
+                        
+                    <label for="inputPassword" class="sr-only">shirtNumber</label>
+                    <input type="number" id="inputPassword" class="form-control" name="height"
+                        placeholder="height" autocomplete="on" ngModel required>
+
                     <button style="margin: 4px" class="btn btn-lg btn-primary btn-block" 
                     type="submit" >Sign in</button>
 
-                    <div class="alert alert-danger" role="alert" >
+                    <div class="alert alert-danger" role="alert" *ngIf="isFormInValidSignin">
                         Please fill all fields.
                     </div>
-                    <div class="alert alert-danger" role="alert" >
-                        Invalid user or password.
-                    </div>
+                    
                 </form>
             </div>
 

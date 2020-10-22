@@ -7,19 +7,64 @@
     overflow: auto;
     text-align: center;
     
+    
 
 
     background-image:url("../../../assets/basketball.jpg");
+}
+.new{
+    color :orangered;
+  
 }
 
 .wrap{
     justify-content: center;
     display: inline-block;
+    
     /* display: flex; */
     
 }
-.card{}
 .card-img-top{
     height: 245px;
-    width: 245px
+    width: 200px;
+}
+
+.ball{
+    /* background-image:url("../../../assets/ball1.png"); */
+    /* background-color: brown */
+    height: 150px;
+    width: 150px;
+    
+}
+
+.ball1{
+    /* background-image:url("../../../assets/ball1.png"); */
+    /* background-color: brown */
+    margin-left:400px;
+    height: 150px;
+    width: 150px;
+    flex-direction: column
+    
+}
+.balls{
+    display: flex;
+    
+    
+}
+
+.ball2{
+    margin-left:850px;
+    height: 150px;
+    width: 150px;
+    flex-direction: column
+
+
+    /* background-image:url("../../../assets/ball1.png"); */
+    /* background-color: brown */
+    
+}
+.vs{
+    position: relative;
+    /* margin-top: 110px; */
+    /* text-align: center; */
 }
