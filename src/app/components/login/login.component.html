@@ -1,28 +1,89 @@
-<p>login works!</p>
+<div class="body">
+    <!-- <button (click)="add()" >adddd</button> -->
+   
+   
+    <h1 class="wellcom">wellcom</h1>
+   <div class="oneOfus">
+       <button class="log">
+            <h4>one of us?</h4>
+           <img (click)="checkIfOneOfUs()" src="assets/wink.png" alt="Card image cap" >
+   
+       </button>  
+       <button class="sign">
+            <h4>new here?</h4>
+           <img (click)="checkIfNew()" src="assets/embarrassed.png" alt="Card image cap">
+   
+       </button>  
 
-<div class="login-wrapper">
-    <div class="card">
-        <div class="card-body">
-            <form class="form-signin" (ngSubmit)="onSubmit(signInForm)" #signInForm="ngForm">
-                <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+   </div>
+   <div class="text">
+       <h3>
+           if u are here u probebly shared whith <br>us
+       </h3>
 
-                <label for="inputlogin" class="sr-only">Name </label>
-                <input type="text" id="inputLogin" class="form-control" name="name" placeholder="name" ngModel
-                    >
+   </div>
+    <div class="login-wrapper">
 
-                <label for="inputPassword" class="sr-only">shirtNumber</label>
-                <input type="number" id="inputPassword" class="form-control" name="shirtNumber" placeholder="shirtNumber"
-                    autocomplete="on" ngModel >
+        <!-- <div class="card"> -->
+            <div class="login">
+                <div *ngIf="oneOfus" class="card-body">
+                    <form class="form-signin" (ngSubmit)="onSubmit(signInForm)" #signInForm="ngForm">
+                        <h1 class="h3 mb-3 font-weight-normal">Log in</h1>
 
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                        <label for="inputlogin" class="sr-only">Name </label>
+                        <input type="text" id="inputLogin" class="form-control" name="name" placeholder="name" ngModel
+                            required>
 
-                <div class="alert alert-danger" role="alert" >
-                    Please fill all fields.
+                        <label for="inputPassword" class="sr-only">shirtNumber</label>
+                        <input type="number" id="inputPassword" class="form-control" name="shirtNumber"
+                            placeholder="shirtNumber" autocomplete="on" ngModel required>
+
+                        <button style="margin: 4px" class="btn btn-lg btn-primary btn-block" type="submit">Sign
+                            in</button>
+
+                        <div class="alert alert-danger" role="alert" *ngIf="isFormInValid">
+                            Please fill all fields.
+                        </div>
+                        <div class="alert alert-danger" role="alert" *ngIf="isExists">
+                            Invalid user or password.
+                        </div>
+                    </form>
                 </div>
-                <div class="alert alert-danger" role="alert">
-                    Invalid user or password.
-                </div>
-            </form>
+
+            <!-- </div> -->
         </div>
+
+        <div class="regisration">
+
+            <div *ngIf="newHer" class="card-body">
+                <form class="form-signin" (ngSubmit)="onSubmitSign(signIn)" #signIn="ngForm">
+                    <h1 class="h3 mb-3 font-weight-normal">Register</h1>
+
+                    <label for="inputlogin" class="sr-only">Name </label>
+                    <input type="text" id="inputLogin" class="form-control" name="name" placeholder="name" ngModel
+                        required>
+
+                    <label for="inputPassword" class="sr-only">shirtNumber</label>
+                    <input type="number" id="inputPassword" class="form-control" name="shirtNumber"
+                        placeholder="shirtNumber" autocomplete="on" ngModel required>
+
+                    <button style="margin: 4px" class="btn btn-lg btn-primary btn-block" 
+                    type="submit" >Sign in</button>
+
+                    <div class="alert alert-danger" role="alert" >
+                        Please fill all fields.
+                    </div>
+                    <div class="alert alert-danger" role="alert" >
+                        Invalid user or password.
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+
+
+
+
     </div>
 </div>

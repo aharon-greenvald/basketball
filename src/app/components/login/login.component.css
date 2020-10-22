@@ -1,12 +1,82 @@
+.body{
+  background-image:url("../../../assets/basketball.jpg");
+  min-height: 100vh;
+  
+}
+.wellcom{
+  display: flex;
+  
+  justify-content: center;
+  
+}
+.text{
+  display: flex;
+  opacity: 0.5;
+
+  justify-content: center;
+color :orangered;
+}
+.oneOfus{
+  display: flex;
+
+  justify-content: center;
+
+}
+button{
+  margin:15px;
+
+}
+.log{
+ 
+
+}
+
 .login-wrapper {
-  margin: 20rem auto;
-  width: 20rem;
+  display: flex;
+  /* position: relative; */
+
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* margin: 0 auto; */
+  /* margin-left:50%;  */
+
+  
+}
+/* .card-body{
+} */
+.card{
+  
+  /* margin-left: 800px; 
+  display: inline-block;
+  margin: 0 auto; */
+  /* flex-direction: row ; */
+  
+  /* background: rgb(0, 0, 0); */
+  /* background: rgba(0, 0, 0, 0.5); */
+  
 }
 
 input {
   margin-bottom: 2rem;
+  width: 20rem;
 }
 
 button {
   margin-bottom: 2rem;
+}
+
+.login{
+  background-image:url("https://media.giphy.com/media/rBVM213ASKBIk/giphy.gif");
+  color: #f1f1f1;
+  /* display: inline-block; */
+  margin-right:400px; 
+
+}
+.regisration{
+  background-image:url("https://media.giphy.com/media/rBVM213ASKBIk/giphy.gif");
+  color: #f1f1f1;
+  margin-left:600px; 
+
+
 }

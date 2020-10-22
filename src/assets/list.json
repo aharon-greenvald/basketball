@@ -1,7 +1,42 @@
 [
-    {"name":"aron","made":0,"missed":0},
-    {"name":"nisim","made":0,"missed":0},
-    {"name":"moti","made":0,"missed":0},
-    {"name":"yakov","made":0,"missed":0},
-    {"name":"israel","made":0,"missed":0}
+    {
+      "id": "1",
+      "name": "name 1",
+      "made": 74,
+      "missed": 91,
+      "points": 48,
+      "percentage": 60,
+      "team": 44,
+      "shirtNumber": 45
+    },
+    {
+      "id": "2",
+      "name": "name 2",
+      "made": 96,
+      "missed": 93,
+      "points": 56,
+      "percentage": 11,
+      "team": 38,
+      "shirtNumber": 55
+    },
+    {
+      "id": "3",
+      "name": "name 3",
+      "made": 19,
+      "missed": 89,
+      "points": 11,
+      "percentage": 20,
+      "team": 46,
+      "shirtNumber": 100
+    },
+    {
+      "id": "4",
+      "name": "name 4",
+      "made": 41,
+      "missed": 34,
+      "points": 20,
+      "percentage": 25,
+      "team": 8,
+      "shirtNumber": 94
+    }
   ]

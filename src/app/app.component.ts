@@ -9,4 +9,5 @@ import { AuthenticationService } from 'src/shared/services/authentication.servic
 export class AppComponent {
   title = 'basketball-team';
   constructor(public authenticationService: AuthenticationService){}
+
 }

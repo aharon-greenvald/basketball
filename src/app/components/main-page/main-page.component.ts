@@ -13,10 +13,13 @@ export class MainPageComponent implements OnInit {
   constructor(public listService:ListService,public teamService:TeamService ) { }
 
   ngOnInit(){
-    this.listService.getConfig().subscribe((result=>{
-      this.data = result;
+    // this.listService.getConfig().subscribe((result=>{
+    //   this.data = result;
 
-    }))
+    // }))
+    this.data= this.teamService.names;
+    console.log(this.data);
+    
     
     
   }
@@ -30,18 +33,25 @@ export class MainPageComponent implements OnInit {
     console.log(player);
     
   }
-  addPlayer(obj){
-    if(this.teamService.team1.length<3){
-      this.teamService.newTeam1(obj)
-      console.log(obj);
-    }else if(this.teamService.team2.length<3){
-      this.teamService.newTeam2(obj)
-      console.log(obj);
-    }
-
+  
+  addPlayer(player){
    
-    
 
+    if(this.teamService.team1.length<3){
+      player.team=1;
+      this.teamService.team1name+= player.name.charAt(0);
+      console.log(this.teamService.team1name);
+      console.log(player);
+      
+      this.teamService.team1.push(player);
+    }else if(this.teamService.team2.length<3){
+      player.team=2;
+      this.teamService.team2name+= player.name.charAt(0);
+
+
+      this.teamService.team2.push(player);
+
+    }
   }
 
 }
