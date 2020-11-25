@@ -1,124 +1,87 @@
-<button>assdd</button>
 <div class="page">
 
+  <div class="teams">
     
-    <h1>team 1</h1>
-    <div class="wrap">
-            
-            <div style="margin-left:267px;" *ngFor="let player of teamService.team1">
-        
-                    <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="{{player.img}}" alt="Card image cap">
-                              <div  class="card-body">
-                              <h3  class="card-title">{{player.name}}</h3>
-                              <div style="display: flex;">
-                                    <!-- <span><h2 class="card-text">{{player.made}}</h2></span> -->
-                                    <span><h2 class="card-text">{{player.missed}}</h2></span>
-
-
-                              </div>
-                              <button class="btn btn-primary" (click)="madeBtn(player)">Make shot</button>
-                              <button class="btn btn-danger" (click)="missedBtn(player)">Missed shot</button>
-                                </div>
-                              </div>
-                            
-                    </div>
-    
-    
-    </div>
-    <div class="game" >
+    <h1 >{{teamService.team1name}}</h1>
+    <div class="team1" *ngFor="let player of teamService.team1">
       
-        <table>
-        <h1>{{teamService.team1name}}</h1>
-          <tr>
-            <th>Name</th>
-            <th>Made</th>
-            <th>missed</th>
-            <th>points</th>
-            <th>percentage</th>
-          </tr>
-          <tr *ngFor="let player of teamService.team1">
-            <td>{{player.name}}</td>
-            <td><button >{{player.made}}</button></td>
-            <td><button >{{player.missed}}</button></td>
-            <td>{{player.points}}</td>
-            <td>{{player.percentage}}</td>
-            
-          </tr>
-        </table>
-    
-        <h1>vs</h1>
-        <table>
-          <span>{{teamService.team2name}}</span>
+      
+      <img  class="avatar" src="{{player.img}}" alt="Card image cap">
+      
+      
+      
+      <button class="btn btn-danger" (click)="missedBtn(player)">Missed shot</button> 
+      <button class="btn btn-primary" (click)="madeBtn(player)">Make shot</button> 
+      <table>
+        <tr class="o">
+          <th>Name</th>
+          <th>Made</th>
+          <th>missed</th>
+          <th>points</th>
+          <th>per</th>
+          <th>sTM</th>
+          <th>sTMis</th>
+          <th>sumAll</th>
+          <th>sTPre</th>
+        </tr>
+        <tr >
+          <td>{{player.name}}</td>
+          <td>{{player.made}}</td>
+          <td>{{player.missed}}</td>
+          <td>{{player.points}}</td>
+          <td>{{player.percentage}}%</td>
+          <td>{{sumTeam1Made}}</td>
+          <td>{{sumTeam1Missed}}</td>
+          <td>{{sum1All}}</td>
+          <td>{{sumTeam1Prec}}%</td>
           
-          <tr>
-            <th>Name</th>
-            <th>Made</th>
-            <th>missed</th>
-            <th>points</th>
-            <th>percentage</th>
-    
-          </tr>
-          <tr *ngFor="let player of teamService.team2">
-            <td>{{player.name}}</td>
-            <td><button (click)="madeBtn(player)">{{player.made}}</button></td>
-            <td><button (click)="missedBtn(player)">{{player.missed}}</button></td>
-            <td>{{player.points}}</td>
-            <td>{{player.percentage}}</td>
-    
-    
-    
-          </tr>
-          
-          
-        </table>
-        <div class="t1">
-
-            <h1> sumTeamMade:{{sumTeam1Made}}</h1>
-            <h1>sumTeamMissed:{{sumTeam1Missed}}</h1>
-            <h1>sumAll:{{sum1All}}</h1>
-            <h1>sumTeamPrec:  {{sumTeam1Prec}}%</h1>
-          </div>
-          <div class="t2">
-        
-            <h1> sumTeamMade:{{sumTeam2Made}}</h1>
-            <h1>sumTeamMissed:{{sumTeam2Missed}}</h1>
-            <h1>sumAll:{{sum2All}}</h1>
-            <h1>sumTeamPrec:  {{sumTeam2Prec}}%</h1>
-          </div>
-        
-        
-      </div>
-    <h1>team2</h1>
-
-    <div class="wrap">
-            
-            <div style="margin-left:267px;" *ngFor="let player of teamService.team2">
-        
-                    <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="{{player.img}}" alt="Card image cap">
-                              <div  class="card-body">
-                              <h3  class="card-title">{{player.name}}</h3>
-                              <div style="display: flex;">
-                                    <!-- <span><h2 class="card-text">{{player.made}}</h2></span> -->
-                                    <span><h2 class="card-text">{{player.missed}}</h2></span>
-
-
-                              </div>
-                                  <p class="btn btn-primary" (click)="madeBtn(player)">Make shot</p>
-                                  <p  class="btn btn-danger" (click)="missedBtn(player)">Missed shot</p>
-                                </div>
-                              </div>
-                            
-                    </div>
-    
-    
+        </tr>
+      </table>
+      
     </div>
-
+    <button (click)="newGame()">new game</button>
     
-    
-   
-    
-    
-
+    <h1 class="teamname">{{teamService.team2name}}</h1>
+    <div class="team2"  *ngFor="let player of teamService.team2">
+      
+      
+      <img  class="avatar" src="{{player.img}}" alt="Card image cap">
+      
+      
+      
+      <button class="btn btn-danger" (click)="missedBtn(player)">Missed shot</button> 
+      <button class="btn btn-primary" (click)="madeBtn(player)">Make shot</button> 
+      <table>
+        <tr class="o">
+          <th>Name</th>
+          <th>Made</th>
+          <th>missed</th>
+          <th>points</th>
+          <th>per</th>
+          <th>sTM</th>
+          <th>sTMis</th>
+          <th>sumAll</th>
+          <th>sTPre</th>
+          <th>sumPlayer</th>
+        </tr>
+        <tr >
+          <td>{{player.name}}</td>
+          <td>{{player.made}}</td>
+          <td>{{player.missed}}</td>
+          <td>{{player.points}}</td>
+          <td>{{player.percentage}}%</td>
+          <td>{{sumTeam2Made}}</td>
+          <td>{{sumTeam2Missed}}</td>
+          <td>{{sum2All}}</td>
+          <td>{{sumTeam2Prec}}%</td>
+          
+        </tr>
+      </table>
+      
+      
+    </div>
+    <button (click)="save()"> save the game</button>
+  </div>
+  
+  
 </div>

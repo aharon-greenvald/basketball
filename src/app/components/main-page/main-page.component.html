@@ -8,11 +8,11 @@
         <h1 *ngIf="authentication.oneOfus">hi {{authentication.userName }} lat's play </h1>
 
         <div class="wrap" *ngFor="let player of data">
-                <button [disabled]="!iskliked" *ngIf="player.id<=6" (click)="addPlayer(player)">Choose me </button>
+                        <button *ngIf="player.team!=1&&player.team!=2" (click)="addPlayer(player)">Choose me </button>
 
 
-                <div *ngIf="player.id<=6">
-                        <img class="card-img-top" src="{{player.img}}">
+                <div >
+                        <img class="img" src="{{player.img}}" >
 
 
                 </div>
@@ -21,22 +21,26 @@
 
 
         </div>
-
-        <div>
-                <button routerLink="team" routerLinkActive="router-link-active">start a game</button>
-        </div>
-        <h1 class="vs">vs</h1>
-        <div class="balls">
+        
+                <div>
+                        <button (click)="donotlike()" class="example_e">i dosa'nt like the match</button>
+                </div>
+                <div>
+                        <button (click)="iLike()">i like the match</button>
+                </div>  
+        <div class="balls" *ngIf="like">
                 <div class="ball1">
                         <img *ngFor="let player of teamService.team1" class="ball" src="{{player.imgball}}" alt="">
 
                 </div>
+                <h1 class="vs">vs</h1>
 
                 <div class="ball2">
                         <img *ngFor="let player of teamService.team2" class="ball" src="{{player.imgball}}" alt="">
 
 
                 </div>
+
 
         </div>
 

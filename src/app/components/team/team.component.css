@@ -1,37 +1,67 @@
-/* 
-::-webkit-scrollbar{
-    display: none;
-} */
+
+
+
 .page{
-    /* height: 100vh; */
-    overflow: auto;
-    flex-direction: row;
-    text-align: center;
-    background-image:url("../../../assets/basketball.jpg");
-
-
-
+  display: flex;
 }
 
-.wrap{
 
+.teams{
+  display: flex;
+
+   flex-direction: column;
+  position: relative;
+  top: 0px;
+
+}
+.team1{
+  /* flex-direction: column; */
+  margin-left:100px;
+    height: 150px;
+    width: 200px;
     display: flex;
-}
-.card-img-top{
-    height: 245px;
-    width: 345px
-}
-/* .team2{
-    background-color: brown;
-} */
-.ng{
-    display: flex;
-  }
-  ul{
+
+    flex-direction: row
     
-    margin: 34px;
-  }
-  
+ 
+}
+.teamstats{
+ 
+
+}
+.team2{
+  /* flex-direction: column; */
+  margin-left:200px;
+  height: 150px;
+  width: 200px;
+  display: flex;
+  /* position: relative; 
+  top: 0px; */
+
+  flex-direction: row
+
+}
+.card-text{
+  font-size: 82px;
+    color :orangered;
+     
+}
+.teamname{
+  font-size: 82px;
+    color :orangered;
+}
+
+/* .wrap{
+
+    display: flex;
+} */
+ .avatar{
+  vertical-align: middle;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}  
+
   
   table, th, td {
       border: 1px solid black;
@@ -41,7 +71,6 @@
     .game{
       background: burlywood;
       display: flex;
-      /* margin: 2px; */
     }
     .teamsname{
       background-color: aqua;
@@ -49,9 +78,13 @@
   
     .t1{
   background-color: blueviolet;
-    }
+    } 
   
     .t2{
       background-color: rgb(226, 43, 43);
   
+    } 
+    h4{
+      color :orangered;
+
     }
