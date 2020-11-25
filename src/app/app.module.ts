@@ -9,7 +9,7 @@ import { TeamComponent } from './components/team/team.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { ResultsComponent } from './results/results.component';
+import { ResultsComponent } from './components/results/results.component';
 
 
 @NgModule({
