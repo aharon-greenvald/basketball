@@ -1,17 +1,39 @@
 <div class="page">
 
-  <div class="teams">
-    
-    <h1 >{{teamService.team1name}}</h1>
+  <!-- <h1 class="game">game</h1> -->
+  <div class="clock">
+     {{minuts}}:{{seconds}}
+     <span>
+       <button  (click)="startStop()">{{startBtn}}</button> 
+       
+     </span>
+  </div>
+  
+  
+  <div class="team1" *ngFor="let player of data1">
+
+
+      <img class="avatar" src="{{player.img}}" >
+  </div>
+  <div class="team1" *ngFor="let player of data2">
+
+
+      <img class="avatar" src="{{player.img}}" >
+  </div>
+
+
+  <!-- <div class="teams">
+
+    <h1>{{teamService.team1name}}</h1>
     <div class="team1" *ngFor="let player of teamService.team1">
-      
-      
-      <img  class="avatar" src="{{player.img}}" alt="Card image cap">
-      
-      
-      
-      <button class="btn btn-danger" (click)="missedBtn(player)">Missed shot</button> 
-      <button class="btn btn-primary" (click)="madeBtn(player)">Make shot</button> 
+
+
+      <img class="avatar" src="{{player.img}}" alt="Card image cap">
+
+
+
+      <button class="btn btn-danger" (click)="missedBtn(player)">Missed shot</button>
+      <button class="btn btn-primary" (click)="madeBtn(player)">Make shot</button>
       <table>
         <tr class="o">
           <th>Name</th>
@@ -24,7 +46,7 @@
           <th>sumAll</th>
           <th>sTPre</th>
         </tr>
-        <tr >
+        <tr>
           <td>{{player.name}}</td>
           <td>{{player.made}}</td>
           <td>{{player.missed}}</td>
@@ -34,23 +56,23 @@
           <td>{{sumTeam1Missed}}</td>
           <td>{{sum1All}}</td>
           <td>{{sumTeam1Prec}}%</td>
-          
+
         </tr>
       </table>
-      
+
     </div>
     <button (click)="newGame()">new game</button>
-    
+
     <h1 class="teamname">{{teamService.team2name}}</h1>
-    <div class="team2"  *ngFor="let player of teamService.team2">
-      
-      
-      <img  class="avatar" src="{{player.img}}" alt="Card image cap">
-      
-      
-      
-      <button class="btn btn-danger" (click)="missedBtn(player)">Missed shot</button> 
-      <button class="btn btn-primary" (click)="madeBtn(player)">Make shot</button> 
+    <div class="team2" *ngFor="let player of teamService.team2">
+
+
+      <img class="avatar" src="{{player.img}}" alt="Card image cap">
+
+
+
+      <button class="btn btn-danger" (click)="missedBtn(player)">Missed shot</button>
+      <button class="btn btn-primary" (click)="madeBtn(player)">Make shot</button>
       <table>
         <tr class="o">
           <th>Name</th>
@@ -64,7 +86,7 @@
           <th>sTPre</th>
           <th>sumPlayer</th>
         </tr>
-        <tr >
+        <tr>
           <td>{{player.name}}</td>
           <td>{{player.made}}</td>
           <td>{{player.missed}}</td>
@@ -74,14 +96,14 @@
           <td>{{sumTeam2Missed}}</td>
           <td>{{sum2All}}</td>
           <td>{{sumTeam2Prec}}%</td>
-          
+
         </tr>
       </table>
-      
-      
+
+
     </div>
     <button (click)="save()"> save the game</button>
-  </div>
-  
-  
+  </div> -->
+
+
 </div>

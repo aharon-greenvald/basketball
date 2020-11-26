@@ -1,11 +1,44 @@
-
-
+/* html, body {
+  height:100%;
+}  */
 
 .page{
-  display: flex;
+  background-image:url("src/assets/basketball.jpg");
+  height: 100vh;
+  opacity: 0.8;
+
+
 }
+.game{
+  display: flex;
+
+  text-shadow: 0 2px 20px ;
+  font-size: 82px;
+  color :rgb(180, 59, 8);
+  justify-content: center;
 
 
+}
+.clock{
+
+  font-size: 62px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+  width: 100px;
+  height: 100px;
+
+}
+.avatar{
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}  
+
+/* 
 .teams{
   display: flex;
 
@@ -15,7 +48,6 @@
 
 }
 .team1{
-  /* flex-direction: column; */
   margin-left:100px;
     height: 150px;
     width: 200px;
@@ -30,13 +62,11 @@
 
 }
 .team2{
-  /* flex-direction: column; */
   margin-left:200px;
   height: 150px;
   width: 200px;
   display: flex;
-  /* position: relative; 
-  top: 0px; */
+  top: 0px; 
 
   flex-direction: row
 
@@ -51,16 +81,7 @@
     color :orangered;
 }
 
-/* .wrap{
-
-    display: flex;
-} */
- .avatar{
-  vertical-align: middle;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-}  
+ 
 
   
   table, th, td {
@@ -87,4 +108,4 @@
     h4{
       color :orangered;
 
-    }
+    } */

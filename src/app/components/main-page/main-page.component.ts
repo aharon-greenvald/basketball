@@ -70,6 +70,8 @@ export class MainPageComponent implements OnInit {
       console.log(this.teamService.team1);
       
       this.teamService.team1.push(player);
+      localStorage.setItem('team1', JSON.stringify (this.teamService.team1))
+
     }else if(this.teamService.team2.length<3){
       
       for(let player of this.data){
@@ -80,6 +82,7 @@ export class MainPageComponent implements OnInit {
           this.teamService.team2name = this.acronyms2.split('').sort().join('');
                     console.log(this.teamService.team2);
           this.teamService.team2.push(player);
+          localStorage.setItem('team2', JSON.stringify (this.teamService.team2))
         }
   
       }

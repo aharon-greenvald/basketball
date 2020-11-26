@@ -1,8 +1,7 @@
-/* .body{
+.body{
   background-image:url("../../../assets/basketball.jpg");
   min-height: 100vh;
-  /* margin: 0; */
-/* }  */
+ } 
 .wellcom{
   display: flex;
   text-shadow: 0 2px 20px ;

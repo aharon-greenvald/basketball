@@ -9,7 +9,7 @@ import { ResultsComponent } from './components/results/results.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
-  {path:'main',component:MainPageComponent ,canActivate:[AuthGuard]},
+  {path:'main',component:MainPageComponent },
   {path:'team',component:TeamComponent},
   {path:'results',component:ResultsComponent},
 ];

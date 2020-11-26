@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, AfterViewChecked, AfterViewInit } from '@angular/core';
 import { TeamService } from 'src/shared/services/team.service';
 import { ListService } from 'src/shared/services/list.service';
 import { Game } from './game';
@@ -11,22 +11,30 @@ import { PlayerStats } from './playerStats';
   styleUrls: ['./team.component.css']
 })
 export class TeamComponent implements OnInit {
-  data:any;
+  
+  
+  data1:any;
+  data2:any;
   stats=[]
+  team1=[]
+  team2=[]
+
   
   
-  constructor(public listService:ListService,public teamService :TeamService,private router:Router ) { }
+  constructor(public listService:ListService,
+    public teamService :TeamService,private router:Router
+    ) { }
   
   ngOnInit(): void {
     // this.listService.getConfig().subscribe((result=>{
-      //   this.data = result;
-      //   console.log(this.data);
-      // }))
-      // this.teamService.team1=[]
-      // this.teamService.team2=[]
-      console.log(this.teamService.games);
-      
+    //   this.data = result;
+    //   console.log(this.data);
+    // }))
+    this.data1 = JSON.parse(localStorage.getItem("team1") || "[]");
+    this.data2 = JSON.parse(localStorage.getItem("team2") || "[]");
+
     }
+    
     
     sumPlayer=0;
     sumPointsPlayer=0
@@ -43,7 +51,44 @@ export class TeamComponent implements OnInit {
   sumTeam2Missed=0;
   sum2All=0;
   sumTeam2Prec=0;
+   startBtn = "start"
+
   
+  setTimer
+  // startBtn = "start"
+  minuts='00'
+  seconds='00';
+
+  startStop(){
+
+    console.log(this.startBtn);
+    let sec =0
+    let min =0
+    if(this.startBtn=="start"){
+      
+      
+      this.setTimer=setInterval(()=>{
+        sec++
+        sec<10? this.seconds=`0${sec}`:this.seconds= `${sec}`
+        if(sec==60){
+          sec =0
+          sec++
+          min++
+          min<10? this.minuts=`0${min}`:this.minuts= `${min}`
+        }
+      },1000)
+      this.startBtn="reset"
+    }else {
+      
+      clearInterval(this.setTimer)
+      this.seconds=`0${sec}`
+      this.minuts=`0${min}`
+      
+      this.startBtn="start"
+
+
+    }
+  }
   
   missedBtn(player){
     console.log(player);
