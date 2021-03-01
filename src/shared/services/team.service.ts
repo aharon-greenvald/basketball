@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthenticationService } from './authentication.service';
 
 @Injectable({
   providedIn: 'root'
@@ -99,7 +100,7 @@ export class TeamService {
   team2name ='';
 
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, public authentication:AuthenticationService) { }
 
   // newTeam1(newPlayer){
   //   this.team1.push(newPlayer)
@@ -111,6 +112,7 @@ export class TeamService {
   // }
   addNewPlayer(newPlayer){
     this.newUser = newPlayer.name;
+    this.authentication.isAuth=false
     // this.names.push(newPlayer)
     this.router.navigate(['main'])
 

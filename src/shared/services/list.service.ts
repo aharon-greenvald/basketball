@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 // import list from '../../shared/list.json'
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
+import { PlayerStats } from 'src/app/components/team/playerStats';
 
 
 @Injectable({
@@ -9,6 +10,7 @@ import { Subject } from 'rxjs';
 })
 export class ListService {
   playerStats$ = new Subject() 
+  currentId
 
   
   urlp = 'http://localhost:1000/players'
@@ -28,12 +30,23 @@ export class ListService {
 
   }
 
-playerStats(game){
+playerStats(plstats){
+  console.log('gggggggggaaaaaaammmmmmmmmeeeee',plstats);
+  
+  return this.http.post<any>(this.urls, {playerStats:plstats})
+}
+createGameStats(game){
   console.log('gggggggggaaaaaaammmmmmmmmeeeee',game);
   
-  return this.http.post<any>(this.urls, {playerStats:game})
+  return this.http.post<any>(`${this.urls}/game`, {game})
+}
+
+getCurrentGame(id) {
+  return this.http.get(`${this.urls}/game/${id}`);
 }
 
 
-
+getstatsGames() {
+  return this.http.get(`${this.urls}/game`);
+}
 }

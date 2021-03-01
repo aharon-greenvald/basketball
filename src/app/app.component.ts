@@ -8,6 +8,8 @@ import { AuthenticationService } from 'src/shared/services/authentication.servic
 })
 export class AppComponent {
   title = 'basketball-team';
-  constructor(public authenticationService: AuthenticationService){}
+  constructor(public authenticationService: AuthenticationService){
+    authenticationService.isAuth =false
+  }
 
 }

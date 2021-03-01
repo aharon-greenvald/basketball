@@ -1,4 +1,5 @@
 export class PlayerStats{
+    gameId:number
     made:number;
     name:string;
     missed:number;

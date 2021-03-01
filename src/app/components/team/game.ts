@@ -1,12 +1,14 @@
 export class Game {
-    sumPlayerPrece: number;
-    sumpointPlayer: number;
+    date:string;
+    gameDuration:string;
+    sumPointsTeam1: number;
+    sumPointsTeam2: number;
 
-    sum1All: number;
     sumTeam1Prec: number;
 
 
-    sum2All: number;
     sumTeam2Prec: number;
+    team1name:string
+    team2name:string
 
 }

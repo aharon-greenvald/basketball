@@ -1,11 +1,80 @@
-<div >
-          <ul *ngFor="let game of data">
-          <li>{{game.name}} : {{game.points}}</li>
-          <!-- <li>sumPlayer:  {{game.sumPlayerPrece}}</li>
-          <li>sum1All : {{game.sum1All}}</li>
-          <li>sum2All:   {{game.sum2All}}</li>
-          <li>sumTeam1Prec   :{{game.sumTeam1Prec}}</li>
-          <li> sumTeam2Prec :{{game.sumTeam2Prec}}</li> -->
-           
-          </ul>
-        </div>
+<h1>{{whoWin}}</h1>
+<audio #audioOption>
+  <source src='../../../assets/basket.mp3' type="audio/mp3">
+</audio>
+                  <div class="tables">
+
+                    <div class="container1">
+                    <h1 style="text-align: center">{{dataGame[0].team1name}}</h1>
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>gameId</th>
+                            <th>Name</th>
+                            <th>Shots</th>
+                            <th>per</th>
+                            <th>points</th>
+                            
+                          </tr>
+                        </thead>
+                        <tbody>
+                          
+                          
+                          
+                          <tr  *ngFor="let game of listToDisplayTeamOne ">
+                            <td  >{{game.gameId}}</td>
+                            <td >{{game.name}}</td>
+                            <td >{{game.made}}/{{game.made+game.missed}}</td>
+                            <td >{{game.percentage}}%</td>
+                            <td  style="text-align: center">{{game.points}}</td>
+                            
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    
+                    
+                    <div class="container2">
+                      
+                      <h1>{{dataGame[0].team2name}}</h1>
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>gameId</th>
+                            <th>Name</th>
+                            <th>Shots</th>
+                            <th>per</th>
+                            <th>points</th>
+                            
+                          </tr>
+                        </thead>
+                        <tbody>
+                          
+                          
+                          
+                          <tr  *ngFor="let game of listToDisplayTeamTow ">
+                            <td  >{{game.gameId}}</td>
+                            <td >{{game.name}}</td>
+                            <td >{{game.made}}/{{game.made+game.missed}}</td>
+                            <td >{{game.percentage}}%</td>
+                            <td style="text-align: center">{{game.points}}</td>
+                            <td >{{game.teamName}}</td>
+                            
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+                  <div style="position: relative;margin-bottom: 100px;border: rgb(251, 93, 1) 2px solid; text-align: center; width: 30%; margin-left: 35%;
+                  box-shadow: 3px 5px 6px 5px rgba(248, 4, 4, 0.1); background-color: aliceblue; border-radius: 15px;
+                  ">
+                  <h1 >Number of Games:{{counter}}</h1>
+                  <h1 style="color: orange">average points{{dataGame[0].team1name}}: {{avaraget1}}</h1>
+                  <h1 style="color: orange">average points:{{dataGame[0].team2name}}: {{avaraget2}}</h1>
+                  <h1 style="color: orange">wins{{dataGame[0].team1name}}: {{t1w}}</h1>
+                  <h1 style="color: orange">wins{{dataGame[0].team2name}} :{{t2w}}</h1>
+
+                  </div>
+                  <button (click)="newGame()">new game</button>

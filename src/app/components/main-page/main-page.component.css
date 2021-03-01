@@ -53,6 +53,7 @@
 }
 .balls{
     display: flex;
+    /* position: absolute; */
 
     
     
@@ -81,7 +82,7 @@
     margin-right: auto; */
 
 }
-.example_e {
+/* .example_e {
     border: none;
     background: #404040;
     color: #ffffff !important;
@@ -91,4 +92,4 @@
     border-radius: 6px;
     display: inline-block;
     transition: all 0.3s ease 0s;
-    }
+    } */

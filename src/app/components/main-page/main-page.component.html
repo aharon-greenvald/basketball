@@ -1,11 +1,12 @@
+
 <div class="page">
         <div class="new">
-                <h1 *ngIf="!authentication.oneOfus">welcome {{teamService.newUser }} </h1>
-                <h2 *ngIf="!authentication.oneOfus">Sorry, but we are already 6, don't worry we took
+                <h1 *ngIf="!authenticationService.oneOfus">welcome {{teamService.newUser }} </h1>
+                <h2 *ngIf="!authenticationService.oneOfus">Sorry, but we are already 6, don't worry we took
                         your details <br> when there will be space, we will contact</h2>
 
         </div>
-        <h1 *ngIf="authentication.oneOfus">hi {{authentication.userName }} lat's play </h1>
+        <h1 *ngIf="authenticationService.oneOfus">hi {{authenticationService.userName }} lat's play </h1>
 
         <div class="wrap" *ngFor="let player of data">
                         <button *ngIf="player.team!=1&&player.team!=2" (click)="addPlayer(player)">Choose me </button>
@@ -23,10 +24,10 @@
         </div>
         
                 <div>
-                        <button (click)="donotlike()" class="example_e">i dosa'nt like the match</button>
+                        <button  style=" background-color: red; color: whitesmoke; border-radius: 15px;" (click)="donotlike()" class="example_e">i dosa'nt like the match</button>
                 </div>
                 <div>
-                        <button (click)="iLike()">i like the match</button>
+                        <button  style=" border-radius: 15px; background-color: green; color: whitesmoke" (click)="iLike()">i like the match</button>
                 </div>  
         <div class="balls" *ngIf="like">
                 <div class="ball1">

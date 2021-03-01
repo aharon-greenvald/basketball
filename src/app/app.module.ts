@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ResultsComponent } from './components/results/results.component';
+import { MyStatsComponent } from './components/my-stats/my-stats.component';
+import { TeamsStatsComponent } from './components/teams-stats/teams-stats.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { ResultsComponent } from './components/results/results.component';
     TeamComponent,
     LoginComponent,
     NavbarComponent,
-    ResultsComponent
+    ResultsComponent,
+    MyStatsComponent,
+    TeamsStatsComponent
   ],
   imports: [
     BrowserModule,

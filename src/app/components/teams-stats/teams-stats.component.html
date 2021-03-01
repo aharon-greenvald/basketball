@@ -1,0 +1,182 @@
+<!-- <p>teams-stats works!</p>
+<table>
+    <tr class="o">
+      <th>Date</th>
+      <th>GameDuration</th>
+      <th>Team1name</th>
+      <th>Team2name</th>
+      <th>Team1 %</th>
+      <th>Team2 %</th>
+      <th>Team1 points</th>
+      <th>Team2 points</th>
+      
+    </tr>
+    <tr  *ngFor="let game of data |async">
+      <td>{{game.date}}</td>
+      <td>{{game.gameDuration}}</td>
+      <td>{{game.team1name}}</td>
+      <td>{{game.team2name}}</td>
+      <td>{{game.sumTeam1Prec}}%</td>
+      <td>{{game.sumTeam2Prec}}%</td>
+      <td>{{game.sumPointsTeam1}}</td>
+      <td>{{game.sumPointsTeam2}}</td>
+     
+      
+    </tr>
+  </table> 
+ <table>
+    <tr class="o">
+      <th>Date</th>
+      <th>GameDuration</th>
+      <th>Team1name</th>
+      <th>Team2name</th>
+      <th>Team1 %</th>
+      <th>Team2 %</th>
+      <th>Team1 points</th>
+      <th>Team2 points</th>
+      
+    </tr>
+    <tr  *ngFor="let game of data |async">
+      <td>{{game.date}}</td>
+      <td>{{game.gameDuration}}</td>
+      <td>{{game.team1name}}</td>
+      <td>{{game.team2name}}</td>
+      <td>{{game.sumTeam1Prec}}%</td>
+      <td>{{game.sumTeam2Prec}}%</td>
+      <td>{{game.sumPointsTeam1}}</td>
+      <td>{{game.sumPointsTeam2}}</td>
+     
+      
+    </tr>
+ </table> 
+   <table>
+    <tr class="o">
+      <th>Date</th>
+      <th>GameDuration</th>
+      <th>Team1name</th>
+      <th>Team1 %</th>
+      <th>Team1 points</th>
+      
+    </tr>
+    <tr  *ngFor="let game of data |async">
+      <td>{{game.date}}</td>
+      <td>{{game.gameDuration}}</td>
+      <td>{{game.team1name}}</td>
+      <td>{{game.sumTeam1Prec}}%</td>
+      <td>{{game.sumPointsTeam1}}</td>
+     
+      
+    </tr>
+  </table> -->
+  <!-- <div class="tables">
+
+      <div class="container1">
+      
+      <table >
+          <thead>
+
+        <tr >
+          <th>Date</th>
+          <th>GameDuration</th>
+          <th>TeamName</th>
+          <th>Team %</th>
+          <th>points</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+
+
+        <tr *ngFor="let game of data |async">
+          <td>{{game.date}}</td>
+          <td>{{game.gameDuration}}</td>
+          <td>{{game.team1name}}</td>
+          <td>{{game.sumTeam1Prec}}%</td>
+          <td>{{game.sumPointsTeam1}}</td>
+          
+          
+        </tr>
+      </tbody>
+
+      </table> 
+      <table  class="customers">
+        <tr >
+          <th>Date</th>
+          <th>GameDuration</th>
+          <th>TeamName</th>
+          <th>Team %</th>
+          <th>points</th>
+          
+        </tr>
+        <tr *ngFor="let game of data |async">
+          <td>{{game.date}}</td>
+          <td>{{game.gameDuration}}</td>
+          <td>{{game.team2name}}</td>
+          <td>{{game.sumTeam2Prec}}%</td>
+          <td>{{game.sumPointsTeam2}}</td>
+          
+          
+        </tr>
+      </table> 
+    </div>
+  </div>
+   -->          <div class="tables">
+
+                    <div class="container1">
+                      <table>
+                        <thead>
+                          <tr>
+                              <th>Date</th>
+                              <th>GameDuration</th>
+                              <th>TeamName</th>
+                              <th>Team %</th>
+                              <th>points</th>
+                            
+                          </tr>
+                        </thead>
+                        <tbody>
+                          
+                          
+                          
+                          <tr   *ngFor="let game of data |async">
+                              <td>{{game.date}}</td>
+                              <td>{{game.gameDuration}}</td>
+                              <td>{{game.team2name}}</td>
+                              <td>{{game.sumTeam2Prec}}%</td>
+                              <td>{{game.sumPointsTeam2}}</td>
+                            
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    
+                    
+                    <div class="container2">
+                      
+                      <table>
+                        <thead>
+                          <tr>
+                              <th>Date</th>
+                              <th>GameDuration</th>
+                              <th>TeamName</th>
+                              <th>Team %</th>
+                              <th>points</th>
+                            
+                          </tr>
+                        </thead>
+                        <tbody>
+                          
+                          
+                          
+                          <tr   *ngFor="let game of data |async">
+                              <td>{{game.date}}</td>
+                              <td>{{game.gameDuration}}</td>
+                              <td>{{game.team1name}}</td>
+                              <td>{{game.sumTeam1Prec}}%</td>
+                              <td>{{game.sumPointsTeam1}}</td>
+                            
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>

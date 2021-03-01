@@ -1,0 +1,74 @@
+<!-- <p>my-stats works!</p>
+<table >
+        <th>Team</th>
+        <th>Made</th>
+        <th>missed</th>
+        <th>points</th>
+        <th>per</th>
+        
+      <tr  *ngFor="let game of dataron |async">
+            <td>{{game.teamName}}</td>
+            <td>{{game.made}}</td>
+            <td>{{game.missed}}</td>
+            <td>{{game.points}}</td>
+            <td>{{game.percentage}}%</td>
+        
+      </tr>
+    </table> -->
+<div class="tables">
+
+  <div  class="container1" >
+    <table >
+      <thead>
+        <tr>
+          <th>Team</th>
+          <th>Made</th>
+          <th>per</th>
+          <th>points</th>
+
+        </tr>
+        <div>
+        </div>
+      </thead>
+      <div >
+      </div>
+      <tbody *ngFor="let game of dataron |async" >
+        <tr  *ngIf="game.teamName=='AMS'">
+          <td>{{game.teamName}}</td>
+          <td>{{game.made}}/{{game.made+game.missed}}</td>
+          <td>{{game.percentage}}%</td>
+          <td>{{game.points}}</td>
+        </tr>
+        
+        
+      </tbody>
+    </table>
+  </div>
+  <div  class="container2" >
+      <table >
+        <thead>
+          <tr>
+            <th>Team</th>
+            <th>Made</th>
+            <th>per</th>
+            <th>points</th>
+  
+          </tr>
+          <div>
+          </div>
+        </thead>
+        <div >
+        </div>
+        <tbody *ngFor="let game of dataron |async" >
+          <tr  *ngIf="game.teamName=='AMY'">
+            <td>{{game.teamName}}</td>
+            <td>{{game.made}}/{{game.made+game.missed}}</td>
+            <td>{{game.percentage}}%</td>
+            <td>{{game.points}}</td>
+          </tr>
+          
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
